@@ -1,5 +1,5 @@
 # NestJS Template
-| "That's one small step for man, one giant leap for mankind." — Armstrong on the moon
+> "That's one small step for man, one giant leap for mankind." — Armstrong on the moon
 
 ## TODO
 ### Dependencies
@@ -8,6 +8,7 @@
 - [x] Vite (w/swc)
 - [ ] TypeORM
 - [ ] Passport.js
+- [ ] Winston
 
 ### Settings
 - [ ] Monorepo
