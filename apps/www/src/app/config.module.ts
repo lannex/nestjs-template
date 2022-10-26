@@ -1,5 +1,10 @@
 import { ConfigModule as cm } from '@nestjs/config';
 import Joi from 'joi';
+import path from 'path';
+
+const envFilePath = [path.basename(__dirname)]
+  .map((app) => `./apps/${app}/src/environments`)
+  .map((envPath) => `${envPath}/.env.${process.env.NODE_ENV}`);
 
 const validationSchema = Joi.object({
   DB_HOST: Joi.string().required(),
@@ -9,7 +14,7 @@ const validationSchema = Joi.object({
 });
 
 export const ConfigModule = cm.forRoot({
-  envFilePath: [`.env.${process.env.NODE_ENV}`],
-  isGlobal: true,
+  envFilePath,
   validationSchema,
+  isGlobal: true,
 });
