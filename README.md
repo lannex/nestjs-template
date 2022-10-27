@@ -6,7 +6,7 @@
 - [x] Pnpm
 - [x] NestJS (w/ express)
 - [x] ~~Vite (w/ swc)~~ Webpack (w/ swc)
-- [ ] TypeORM
+- [x] TypeORM
 - [ ] Passport.js
 - [ ] Winston
 
