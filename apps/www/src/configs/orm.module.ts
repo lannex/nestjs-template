@@ -8,12 +8,12 @@ export const OrmModule = TypeOrmModule.forRootAsync({
   useFactory: (configService: ConfigService) => ({
     type: 'mysql',
     host: configService.get('DB_HOST'),
-    port: configService.get('DB_PORT'),
+    port: Number(configService.get('DB_PORT')),
     username: configService.get('DB_USERNAME'),
     password: configService.get('DB_PASSWORD'),
     database: configService.get('DB_DATABASE'),
     entities: [`${__dirname}/**/*.entity.ts`],
-    synchronize: true,
+    synchronize: process.env.NODE_ENV !== 'production',
   }),
   inject: [ConfigService],
 });
