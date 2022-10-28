@@ -34,6 +34,13 @@
         "import/extensions": ["off"],
         "import/prefer-default-export": "off",
         "no-useless-constructor": "off"
+      },
+      "settings": {
+        "import/resolver": {
+          "typescript": {
+            "project": ["tsconfig.base.json", "tsconfig.json"]
+          }
+        }
       }
     },
     {
