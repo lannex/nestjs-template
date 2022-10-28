@@ -4,6 +4,7 @@ specifiers:
   '@nestjs/common': ^9.1.6
   '@nestjs/config': ^2.2.0
   '@nestjs/core': ^9.1.6
+  '@nestjs/cqrs': ^9.0.1
   '@nestjs/jwt': ^9.0.0
   '@nestjs/passport': ^9.0.0
   '@nestjs/platform-express': ^9.1.6
@@ -60,6 +61,7 @@ dependencies:
   '@nestjs/common': 9.1.6_x6yqyveuahcdef4z4mxykmuv6a
   '@nestjs/config': 2.2.0_yjxybkvltbh2d3oivnq5etx3oi
   '@nestjs/core': 9.1.6_bx3wiubfryfbvpzqwr6ml4ajpu
+  '@nestjs/cqrs': 9.0.1_abdwileke2hqrs3f5gykhzlvd4
   '@nestjs/jwt': 9.0.0_@nestjs+common@9.1.6
   '@nestjs/passport': 9.0.0_pkfoh2sq4j5mhokn7ayryfespi
   '@nestjs/platform-express': 9.1.6_6whalgrsvisgjemghedgkfq7dm
@@ -1071,6 +1073,21 @@ packages:
       uuid: 9.0.0
     transitivePeerDependencies:
       - encoding
+
+  /@nestjs/cqrs/9.0.1_abdwileke2hqrs3f5gykhzlvd4:
+    resolution: {integrity: sha512-DsqkAaIHy9+Ot4FJybmlDQk0HBDTGztz0F3LcMnatFDQv1X56W0Y2+R/7jjwHsmHzQfbffT2FGyCOx2/9apFCg==}
+    peerDependencies:
+      '@nestjs/common': ^9.0.0
+      '@nestjs/core': ^9.0.0
+      reflect-metadata: 0.1.13
+      rxjs: ^7.2.0
+    dependencies:
+      '@nestjs/common': 9.1.6_x6yqyveuahcdef4z4mxykmuv6a
+      '@nestjs/core': 9.1.6_bx3wiubfryfbvpzqwr6ml4ajpu
+      reflect-metadata: 0.1.13
+      rxjs: 7.5.7
+      uuid: 8.3.2
+    dev: false
 
   /@nestjs/jwt/9.0.0_@nestjs+common@9.1.6:
     resolution: {integrity: sha512-ZsXGY/wMYKzEhymw2+dxiwrHTRKIKrGszx6r2EjQqNLypdXMQu0QrujwZJ8k3+XQV4snmuJwwNakQoA2ILfq8w==}
