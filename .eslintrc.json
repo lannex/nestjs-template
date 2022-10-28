@@ -31,9 +31,13 @@
         "@typescript-eslint/interface-name-prefix": "off",
         "@typescript-eslint/no-explicit-any": "off",
         "class-methods-use-this": "off",
+        "no-useless-constructor": "off",
         "import/extensions": ["off"],
         "import/prefer-default-export": "off",
-        "no-useless-constructor": "off"
+        "import/no-extraneous-dependencies": [
+          "error",
+          { "devDependencies": ["**/*.test.ts", "**/*.spec.ts"] }
+        ]
       },
       "settings": {
         "import/resolver": {
