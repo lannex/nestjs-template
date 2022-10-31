@@ -1,14 +1,22 @@
 import {
   ClassSerializerInterceptor,
   Module,
+  Provider,
   ValidationPipe,
 } from '@nestjs/common';
 import { APP_FILTER, APP_INTERCEPTOR, APP_PIPE } from '@nestjs/core';
+import { CqrsModule } from '@nestjs/cqrs';
+
+import { HealthcheckModule } from '@nestjs-template/healthcheck';
 
 import { ConfigModule } from './configs/config.module';
 import { OrmModule } from './configs/orm.module';
 
-const providers = [
+const configs = [ConfigModule, OrmModule, CqrsModule];
+
+const modules = [HealthcheckModule];
+
+const providers: Provider[] = [
   {
     provide: APP_PIPE,
     useValue: new ValidationPipe({
@@ -28,7 +36,7 @@ const providers = [
 ];
 
 @Module({
-  imports: [ConfigModule, OrmModule],
+  imports: [...configs, ...modules],
   controllers: [],
   providers,
 })
