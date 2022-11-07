@@ -5,14 +5,9 @@ import {
   ValidationPipe,
 } from '@nestjs/common';
 import { APP_FILTER, APP_INTERCEPTOR, APP_PIPE } from '@nestjs/core';
-import { CqrsModule } from '@nestjs/cqrs';
-
 import { HealthcheckModule } from '@nestjs-template/healthcheck';
 
-import { ConfigModule } from './configs/config.module';
-import { OrmModule } from './configs/orm.module';
-
-const configs = [ConfigModule, OrmModule, CqrsModule];
+import configs from './configs';
 
 const modules = [HealthcheckModule];
 
