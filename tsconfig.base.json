@@ -13,7 +13,9 @@
     "module": "esnext",
     "moduleResolution": "node",
     "noFallthroughCasesInSwitch": true,
-    "paths": {},
+    "paths": {
+      "@nestjs-template/healthcheck": ["libs/healthcheck/src/index.ts"]
+    },
     "removeComments": true,
     "rootDir": ".",
     "skipDefaultLibCheck": true,
