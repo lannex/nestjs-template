@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@fastify/cookie': ^8.3.0
   '@nestjs/common': ^9.1.6
   '@nestjs/config': ^2.2.0
   '@nestjs/core': ^9.1.6
@@ -59,6 +60,7 @@ specifiers:
   typescript: ~4.8.4
 
 dependencies:
+  '@fastify/cookie': 8.3.0
   '@nestjs/common': 9.1.6_x6yqyveuahcdef4z4mxykmuv6a
   '@nestjs/config': 2.2.0_yjxybkvltbh2d3oivnq5etx3oi
   '@nestjs/core': 9.1.6_yjxybkvltbh2d3oivnq5etx3oi
@@ -517,6 +519,13 @@ packages:
       ajv: 8.11.0
       ajv-formats: 2.1.1
       fast-uri: 2.1.0
+    dev: false
+
+  /@fastify/cookie/8.3.0:
+    resolution: {integrity: sha512-P9hY9GO11L20TnZ33XN3i0bt+3x0zaT7S0ohAzWO950E9PB2xnNhLYzPFJIGFi5AVN0yr5+/iZhWxeYvR6KCzg==}
+    dependencies:
+      cookie: 0.5.0
+      fastify-plugin: 4.3.0
     dev: false
 
   /@fastify/cors/8.1.0:
