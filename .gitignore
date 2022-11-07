@@ -44,3 +44,6 @@ Thumbs.db
 .env.test
 .env.development
 .env.production
+
+# asdf
+.tool-versions
