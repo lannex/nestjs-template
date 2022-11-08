@@ -8,10 +8,10 @@
 - [x] ~~Vite (w/ swc)~~ Webpack (w/ swc)
 - [x] TypeORM
 - [x] Fastify
+- [x] Winston
 - [ ] Passport.js
-- [ ] Winston
 
 ### Settings
 - [x] Monorepo (w/ Nx)
+- [x] CQRS
 - [ ] Clean Architecture (w/ Hexagonal)
-- [ ] CQRS

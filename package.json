@@ -27,6 +27,7 @@
     "class-validator": "^0.13.2",
     "joi": "^17.6.4",
     "mysql2": "^2.3.3",
+    "nest-winston": "^1.8.0",
     "passport": "^0.6.0",
     "passport-jwt": "^4.0.0",
     "radash": "^9.0.2",
@@ -35,7 +36,8 @@
     "rxjs": "^7.5.7",
     "tslib": "^2.4.0",
     "type-fest": "^3.1.0",
-    "typeorm": "^0.3.10"
+    "typeorm": "^0.3.10",
+    "winston": "^3.8.2"
   },
   "devDependencies": {
     "@nestjs/schematics": "^9.0.3",

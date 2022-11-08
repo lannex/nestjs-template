@@ -7,6 +7,7 @@ import {
 } from '@nestjs/platform-fastify';
 
 import { AppModule } from '../app.module';
+import { createLogger } from './logger';
 import { buildSwagger } from './swagger';
 
 const isDev = process.env.NODE_ENV !== 'production';
@@ -15,6 +16,7 @@ export const bootstrap = async (host: string, port: string) => {
   const app = await NestFactory.create<NestFastifyApplication>(
     AppModule,
     new FastifyAdapter(),
+    { logger: createLogger('api') },
   );
 
   await app.register(fastifyCookie);
