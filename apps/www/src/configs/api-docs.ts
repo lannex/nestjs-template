@@ -3,12 +3,10 @@ import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 
 interface BuildOptions {
   title: string;
+  path: string;
 }
 
-const buildDocs = (
-  app: INestApplication,
-  { title = 'API 문서' }: BuildOptions,
-) =>
+const createDocs = (app: INestApplication, title: BuildOptions['title']) =>
   SwaggerModule.createDocument(
     app,
     new DocumentBuilder()
@@ -22,8 +20,8 @@ const buildDocs = (
 
 export const buildSwagger = (
   app: INestApplication,
-  buildOptions: BuildOptions,
+  { title, path }: BuildOptions,
 ) =>
-  SwaggerModule.setup('docs', app, buildDocs(app, buildOptions), {
+  SwaggerModule.setup(path, app, createDocs(app, title), {
     swaggerOptions: { defaultModelsExpandDepth: -1 },
   });

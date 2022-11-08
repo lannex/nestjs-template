@@ -8,7 +8,7 @@ import {
 
 import { AppModule } from '../app.module';
 import { createLogger } from './logger';
-import { buildSwagger } from './swagger';
+import { buildSwagger } from './api-docs';
 
 const isDev = process.env.NODE_ENV !== 'production';
 
@@ -32,7 +32,10 @@ export const bootstrap = async (host: string, port: string) => {
   app.enableVersioning();
 
   if (isDev) {
-    buildSwagger(app, { title: 'API 문서' });
+    buildSwagger(app, {
+      title: 'API 문서',
+      path: '/docs',
+    });
   }
 
   await app.listen(port, host);
