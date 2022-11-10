@@ -9,6 +9,7 @@ import { APP_FILTER, APP_INTERCEPTOR, APP_PIPE } from '@nestjs/core';
 import { HealthcheckModule } from '@nestjs-template/healthcheck';
 
 import configs from './configs/modules';
+import { AllExceptionsFilter } from './utils/filters';
 
 const modules = [HealthcheckModule];
 
@@ -25,10 +26,10 @@ const providers: Provider[] = [
     provide: APP_INTERCEPTOR,
     useClass: ClassSerializerInterceptor,
   },
-  // {
-  //   provide: APP_FILTER,
-  //   useClass: AllExceptionsFilter,
-  // },
+  {
+    provide: APP_FILTER,
+    useClass: AllExceptionsFilter,
+  },
 ];
 
 @Module({
