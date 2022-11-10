@@ -7,8 +7,8 @@ import {
 } from '@nestjs/platform-fastify';
 
 import { AppModule } from '../app.module';
-import { createLogger } from './logger';
 import { buildSwagger } from './api-docs';
+import { createLogger } from './logger';
 
 const isDev = process.env.NODE_ENV !== 'production';
 
@@ -34,6 +34,7 @@ export const bootstrap = async (host: string, port: string) => {
   if (isDev) {
     buildSwagger(app, {
       title: 'API 문서',
+      description: '',
       path: '/docs',
     });
   }

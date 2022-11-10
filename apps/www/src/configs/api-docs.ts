@@ -3,15 +3,19 @@ import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 
 interface BuildOptions {
   title: string;
+  description: string;
   path: string;
 }
 
-const createDocs = (app: INestApplication, title: BuildOptions['title']) =>
+const createDocs = (
+  app: INestApplication,
+  { title, description }: Omit<BuildOptions, 'path'>,
+) =>
   SwaggerModule.createDocument(
     app,
     new DocumentBuilder()
       .setTitle(title)
-      .setDescription('')
+      .setDescription(description)
       .addBearerAuth()
       .addCookieAuth('refresh')
       .setVersion('0.0.1')
@@ -20,8 +24,8 @@ const createDocs = (app: INestApplication, title: BuildOptions['title']) =>
 
 export const buildSwagger = (
   app: INestApplication,
-  { title, path }: BuildOptions,
+  { title, path, description }: BuildOptions,
 ) =>
-  SwaggerModule.setup(path, app, createDocs(app, title), {
+  SwaggerModule.setup(path, app, createDocs(app, { title, description }), {
     swaggerOptions: { defaultModelsExpandDepth: -1 },
   });
