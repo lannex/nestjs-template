@@ -3,6 +3,7 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/www/src",
   "projectType": "application",
+  "generatePackageJson": true,
   "targets": {
     "build": {
       "executor": "@nrwl/webpack:webpack",
