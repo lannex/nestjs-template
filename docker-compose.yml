@@ -1,17 +1,47 @@
 version: '3.8'
 services:
   mysql:
+    image: mysql:5.7
     container_name: mysql
     platform: ${DOCKER_PLATFORM}
-    image: mysql:5.7
-    networks:
-      - default
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: test
     ports:
       - '3306:3306'
+    networks:
+      - app
+
+  redis:
+    image: docker.io/bitnami/redis:7.0.5
+    container_name: redis
+    ports:
+      - "6902:6379"
+    environment:
+      - REDIS_PASSWORD=q/w.e,rm
+      - REDIS_DISABLE_COMMANDS=FLUSHDB,FLUSHALL
+    volumes:
+      - redis-data:/bitnami/redis/data
+    networks:
+      - app
+
+  redis-ui:
+    image: patrikx3/p3x-redis-ui:latest
+    container_name: redis-ui
+    ports:
+      - "7843:7843"
+    volumes:
+      - redis-ui:/settings
+    networks:
+      - app
+
+volumes:
+  db-data: null
+  redis-data:
+    driver: local
+  redis-ui: null
 
 networks:
-  default:
+  app:
+    name: app
     driver: bridge
