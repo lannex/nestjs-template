@@ -8,8 +8,8 @@ import { APP_FILTER, APP_INTERCEPTOR, APP_PIPE } from '@nestjs/core';
 
 import { HealthcheckModule } from '@nestjs-template/healthcheck';
 
-import configs from './configs/modules';
 import { AllExceptionsFilter } from './utils/filters';
+import configs from './configs/modules';
 
 const modules = [HealthcheckModule];
 
@@ -34,7 +34,6 @@ const providers: Provider[] = [
 
 @Module({
   imports: [...configs, ...modules],
-  controllers: [],
   providers,
 })
 export class AppModule {}
