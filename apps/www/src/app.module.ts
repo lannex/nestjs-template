@@ -6,7 +6,7 @@ import {
 } from '@nestjs/common';
 import { APP_FILTER, APP_INTERCEPTOR, APP_PIPE } from '@nestjs/core';
 
-import { HealthcheckModule } from '@nestjs-template/healthcheck';
+import { HealthcheckModule } from '@libs/healthcheck';
 
 import { AllExceptionsFilter } from './utils/filters';
 import configs from './configs/modules';

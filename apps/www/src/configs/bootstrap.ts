@@ -6,8 +6,9 @@ import {
   NestFastifyApplication,
 } from '@nestjs/platform-fastify';
 
+import { buildSwagger } from '@libs/shared-configs';
+
 import { AppModule } from '../app.module';
-import { buildSwagger } from './api-docs';
 import { createLogger } from './logger';
 
 const isDev = process.env.NODE_ENV !== 'production';

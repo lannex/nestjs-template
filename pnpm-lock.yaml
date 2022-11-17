@@ -11,7 +11,6 @@ specifiers:
   '@nestjs/passport': ^9.0.0
   '@nestjs/platform-fastify': ^9.2.0
   '@nestjs/schematics': ^9.0.3
-  '@nestjs/swagger': ^6.1.3
   '@nestjs/testing': ^9.2.0
   '@nestjs/typeorm': ^9.0.1
   '@nrwl/cli': 15.1.0
@@ -72,7 +71,6 @@ dependencies:
   '@nestjs/jwt': 9.0.0_@nestjs+common@9.2.0
   '@nestjs/passport': 9.0.0_s6va3jdeufsye4wwu25es3p4om
   '@nestjs/platform-fastify': 9.2.0_rnrweqvx64lasceoqj2op2ehza
-  '@nestjs/swagger': 6.1.3_vrs63ilbgnl3pyoq5bq4bo2rxu
   '@nestjs/typeorm': 9.0.1_2ekyp7igf6cbpgvvmiypy4gzpu
   class-transformer: 0.5.1
   class-validator: 0.13.2
@@ -1191,25 +1189,6 @@ packages:
       jsonwebtoken: 8.5.1
     dev: false
 
-  /@nestjs/mapped-types/1.2.0_qdpnjncnmntjmcz6x55b5h3mje:
-    resolution: {integrity: sha512-NTFwPZkQWsArQH8QSyFWGZvJ08gR+R4TofglqZoihn/vU+ktHEJjMqsIsADwb7XD97DhiD+TVv5ac+jG33BHrg==}
-    peerDependencies:
-      '@nestjs/common': ^7.0.8 || ^8.0.0 || ^9.0.0
-      class-transformer: ^0.2.0 || ^0.3.0 || ^0.4.0 || ^0.5.0
-      class-validator: ^0.11.1 || ^0.12.0 || ^0.13.0
-      reflect-metadata: ^0.1.12
-    peerDependenciesMeta:
-      class-transformer:
-        optional: true
-      class-validator:
-        optional: true
-    dependencies:
-      '@nestjs/common': 9.2.0_x6yqyveuahcdef4z4mxykmuv6a
-      class-transformer: 0.5.1
-      class-validator: 0.13.2
-      reflect-metadata: 0.1.13
-    dev: false
-
   /@nestjs/passport/9.0.0_s6va3jdeufsye4wwu25es3p4om:
     resolution: {integrity: sha512-Gnh8n1wzFPOLSS/94X1sUP4IRAoXTgG4odl7/AO5h+uwscEGXxJFercrZfqdAwkWhqkKWbsntM3j5mRy/6ZQDA==}
     peerDependencies:
@@ -1261,31 +1240,6 @@ packages:
     transitivePeerDependencies:
       - chokidar
     dev: true
-
-  /@nestjs/swagger/6.1.3_vrs63ilbgnl3pyoq5bq4bo2rxu:
-    resolution: {integrity: sha512-H9C/yRgLFb5QrAt6iGrYmIX9X7Q0zXkgZaTNUATljUBra+RCWrEUbLHBcGjTAOtcIyGV/vmyCLv68YSVcZoE0Q==}
-    peerDependencies:
-      '@fastify/static': ^6.0.0
-      '@nestjs/common': ^9.0.0
-      '@nestjs/core': ^9.0.0
-      reflect-metadata: ^0.1.12
-    peerDependenciesMeta:
-      '@fastify/static':
-        optional: true
-    dependencies:
-      '@fastify/static': 6.5.0
-      '@nestjs/common': 9.2.0_x6yqyveuahcdef4z4mxykmuv6a
-      '@nestjs/core': 9.2.0_2kbkxfsrhtatemqz6dhv2pefvq
-      '@nestjs/mapped-types': 1.2.0_qdpnjncnmntjmcz6x55b5h3mje
-      js-yaml: 4.1.0
-      lodash: 4.17.21
-      path-to-regexp: 3.2.0
-      reflect-metadata: 0.1.13
-      swagger-ui-dist: 4.15.1
-    transitivePeerDependencies:
-      - class-transformer
-      - class-validator
-    dev: false
 
   /@nestjs/testing/9.2.0_pf2fb646rsvo5szivgkaevcpvi:
     resolution: {integrity: sha512-Lj6UXmBJKcXB16bZzu0IG7GpH7hl5Cn71OcPSrVVuPrFd5kDYqFbodfE9OkAKaHjEhOvZ2ynoo/i6cyfX4yOvQ==}
@@ -8474,10 +8428,6 @@ packages:
       picocolors: 1.0.0
       stable: 0.1.8
     dev: true
-
-  /swagger-ui-dist/4.15.1:
-    resolution: {integrity: sha512-DlZARu6ckUFqDe0j5IPayO4k0gQvYQw9Un02MhxAgaMtVnTH2vmyyDe+yKeV0r1LiiPx3JbasdS/5Yyb/AV3iw==}
-    dev: false
 
   /swc-loader/0.2.3_@swc+core@1.3.17:
     resolution: {integrity: sha512-D1p6XXURfSPleZZA/Lipb3A8pZ17fP4NObZvFCDjK/OKljroqDpPmsBdTraWhVBqUNpcWBQY1imWdoPScRlQ7A==}
