@@ -10,8 +10,7 @@ import { buildSwagger } from '@libs/shared-configs';
 
 import { AppModule } from '../app.module';
 import { createLogger } from './logger';
-
-const isDev = process.env.NODE_ENV !== 'production';
+import { isProduction } from './index';
 
 export const bootstrap = async (host: string, port: string) => {
   const app = await NestFactory.create<NestFastifyApplication>(
@@ -32,7 +31,7 @@ export const bootstrap = async (host: string, port: string) => {
 
   app.enableVersioning();
 
-  if (isDev) {
+  if (!isProduction) {
     buildSwagger(app, {
       title: 'API 문서',
       description: '',

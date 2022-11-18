@@ -22,6 +22,7 @@ specifiers:
   '@nrwl/nx-cloud': ^15.0.0
   '@nrwl/workspace': 15.2.0
   '@swc/core': ^1.3.18
+  '@types/config': ^3.3.0
   '@types/eslint': ~8.4.9
   '@types/eslint-plugin-prettier': ^3.1.0
   '@types/jest': 29.2.3
@@ -34,6 +35,7 @@ specifiers:
   '@typescript-eslint/parser': ^5.43.0
   class-transformer: ^0.5.1
   class-validator: ^0.13.2
+  config: ^3.3.8
   eslint: ~8.27.0
   eslint-config-airbnb-base: ^15.0.0
   eslint-config-prettier: 8.5.0
@@ -74,6 +76,7 @@ dependencies:
   '@nestjs/typeorm': 9.0.1_2ekyp7igf6cbpgvvmiypy4gzpu
   class-transformer: 0.5.1
   class-validator: 0.13.2
+  config: 3.3.8
   joi: 17.7.0
   mysql2: 2.3.3
   nest-winston: 1.8.0_a2lm2wzuatarjy2ihkhx2k5qdi
@@ -99,6 +102,7 @@ devDependencies:
   '@nrwl/nx-cloud': 15.0.2
   '@nrwl/workspace': 15.2.0_2inmz2n2ug34imbm44bzqbajsu
   '@swc/core': 1.3.18
+  '@types/config': 3.3.0
   '@types/eslint': 8.4.10
   '@types/eslint-plugin-prettier': 3.1.0
   '@types/jest': 29.2.3
@@ -1905,6 +1909,10 @@ packages:
       '@types/node': 18.11.9
     dev: true
 
+  /@types/config/3.3.0:
+    resolution: {integrity: sha512-9kZSbl3/X3TVNowLCu5HFQdQmD+4287Om55avknEYkuo6R2dDrsp/EXEHUFvfYeG7m1eJ0WYGj+cbcUIhARJAQ==}
+    dev: true
+
   /@types/connect-history-api-fallback/1.3.5:
     resolution: {integrity: sha512-h8QJa8xSb1WD4fpKBDcATDNGXghFj6/3GRWG6dhmRcu0RX1Ubasur2Uvx5aeEwlf0MwblEC2bMzzMQntxnw/Cw==}
     dependencies:
@@ -3218,6 +3226,13 @@ packages:
 
   /concat-map/0.0.1:
     resolution: {integrity: sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==}
+
+  /config/3.3.8:
+    resolution: {integrity: sha512-rFzF6VESOdp7wAXFlB9IOZI4ouL05g3A03v2eRcTHj2JBQaTNJ40zhAUl5wRbWHqLZ+uqp/7OE0BWWtAVgrong==}
+    engines: {node: '>= 10.0.0'}
+    dependencies:
+      json5: 2.2.1
+    dev: false
 
   /confusing-browser-globals/1.0.11:
     resolution: {integrity: sha512-JsPKdmh8ZkmnHxDk55FZ1TqVLvEQTvoByJZRN9jzI0UjxK/QgAmsphz7PGtqgPieQZ/CQcHWXCR7ATDNhGe+YA==}
@@ -6188,7 +6203,6 @@ packages:
     resolution: {integrity: sha512-1hqLFMSrGHRHxav9q9gNjJ5EXznIxGVO09xQRrwplcS8qs28pZ8s8hupZAmqDwZUmVZ2Qb2jnyPOWcDH8m8dlA==}
     engines: {node: '>=6'}
     hasBin: true
-    dev: true
 
   /jsonc-parser/3.1.0:
     resolution: {integrity: sha512-DRf0QjnNeCUds3xTjKlQQ3DpJD51GvDjJfnxUVWg6PZTo2otSm+slzNAxU/35hF8/oJIKoG9slq30JYOsF2azg==}

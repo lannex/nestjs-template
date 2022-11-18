@@ -1,6 +1,4 @@
 import { bootstrap } from './configs/bootstrap';
+import { host, port } from './configs';
 
-const host = process.env.HOST || '0.0.0.0';
-const port = process.env.PORT || '3000';
-
-bootstrap(host, port);
+bootstrap(host || '0.0.0.0', port || '3000');

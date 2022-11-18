@@ -1,21 +1,11 @@
-import { ConfigModule as cm } from '@nestjs/config';
-import Joi from 'joi';
-import path from 'path';
+import config from 'config';
+import { ConfigModule as cm, registerAs } from '@nestjs/config';
 
-const envFilePath = [path.basename(__dirname)]
-  .map((app) => `./apps/${app}/src/environments`)
-  .map((envPath) => `${envPath}/.env.${process.env.NODE_ENV}`);
+import { appName } from '../index';
 
-const validationSchema = Joi.object({
-  DB_HOST: Joi.string().required(),
-  DB_PORT: Joi.number().required(),
-  DB_USERNAME: Joi.string().required(),
-  DB_PASSWORD: Joi.string().required(),
-  DB_DATABASE: Joi.string().required(),
-});
+const configRootKeys = ['shared', appName];
 
 export const ConfigModule = cm.forRoot({
-  envFilePath,
-  validationSchema,
+  load: configRootKeys.map((key) => registerAs(key, () => config.get(key))),
   isGlobal: true,
 });

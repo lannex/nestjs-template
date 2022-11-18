@@ -4,7 +4,7 @@ import {
 } from 'nest-winston';
 import * as winston from 'winston';
 
-const { combine, timestamp, ms, errors, colorize, uncolorize } = winston.format;
+const { combine, timestamp, ms, errors, colorize } = winston.format;
 
 export const createLogger = (appName: string) =>
   WinstonModule.createLogger({
@@ -15,7 +15,7 @@ export const createLogger = (appName: string) =>
           timestamp(),
           ms(),
           nestWinstonModuleUtilities.format.nestLike(appName),
-          process.env.NODE_ENV === 'production' ? uncolorize() : colorize(),
+          colorize(),
         ),
       }),
     ],
