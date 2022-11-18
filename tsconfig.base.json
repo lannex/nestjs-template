@@ -14,8 +14,8 @@
     "moduleResolution": "node",
     "noFallthroughCasesInSwitch": true,
     "paths": {
-      "@libs/healthcheck": ["libs/healthcheck/src/index.ts"],
-      "@libs/shared-configs": ["libs/shared-configs/src/index.ts"]
+      "@nestjs-template/healthcheck": ["libs/healthcheck/src/index.ts"],
+      "@nestjs-template/shared-configs": ["libs/shared-configs/src/index.ts"]
     },
     "removeComments": true,
     "rootDir": ".",

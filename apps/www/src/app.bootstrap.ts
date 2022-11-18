@@ -6,7 +6,7 @@ import {
   NestFastifyApplication,
 } from '@nestjs/platform-fastify';
 
-import { buildSwagger } from '@libs/shared-configs';
+import { buildSwagger } from '@nestjs-template/shared-configs';
 
 import { AppModule } from './app.module';
 import { createLogger } from './configs/logger';
