@@ -28,13 +28,13 @@
     "install": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "pnpm i"
+        "command": "pnpm --prefix libs/shared-configs i --frozen-lockfile"
       }
     },
     "update": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "pnpm up -i -L"
+        "command": "pnpm --prefix libs/shared-configs up -i -L"
       }
     }
   },
