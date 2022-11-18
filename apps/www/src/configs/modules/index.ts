@@ -5,4 +5,9 @@ import { MapperModule } from '@libs/shared-configs';
 import { ConfigModule } from './config.module';
 import { OrmModule } from './orm.module';
 
-export default [ConfigModule, OrmModule, MapperModule, CqrsModule];
+export const configsModule = [
+  ConfigModule,
+  OrmModule,
+  MapperModule,
+  CqrsModule,
+];

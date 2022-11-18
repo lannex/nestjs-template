@@ -7,13 +7,17 @@ import { appName, isProduction } from '../values';
 export const OrmModule = TypeOrmModule.forRootAsync({
   imports: [ConfigModule],
   useFactory: (configService: ConfigService) => {
+    const { host, port, username, password, database } = configService.get(
+      `${appName}.db`,
+    );
+
     return {
       type: 'mysql',
-      host: configService.get(`${appName}.db.host`),
-      port: Number(configService.get(`${appName}.db.port`)),
-      username: configService.get(`${appName}.db.username`),
-      password: configService.get(`${appName}.db.password`),
-      database: configService.get(`${appName}.db.database`),
+      host,
+      port: Number(port),
+      username,
+      password,
+      database,
       entities: [`${__dirname}/**/*.entity.ts`],
       synchronize: !isProduction,
     };
