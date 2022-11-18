@@ -2,7 +2,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigService } from '@nestjs/config';
 
 import { ConfigModule } from './config.module';
-import { appName, isProduction } from '../variables';
+import { appName, isProduction } from '../values';
 
 export const OrmModule = TypeOrmModule.forRootAsync({
   imports: [ConfigModule],

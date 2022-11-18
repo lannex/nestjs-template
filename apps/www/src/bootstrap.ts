@@ -10,7 +10,7 @@ import { buildSwagger } from '@libs/shared-configs';
 
 import { AppModule } from './app.module';
 import { createLogger } from './configs/logger';
-import { isProduction } from './configs/variables';
+import { isProduction } from './configs/values';
 
 export const bootstrap = async (host: string, port: string) => {
   const app = await NestFactory.create<NestFastifyApplication>(
