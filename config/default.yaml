@@ -4,9 +4,8 @@ shared:
 # Apps
 # www
 www:
-  server:
-    host:
-    port:
+  host:
+  port:
   db:
     type: mysql
     host: localhost

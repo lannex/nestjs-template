@@ -1,7 +1,7 @@
 import config from 'config';
 import { ConfigModule as cm, registerAs } from '@nestjs/config';
 
-import { appName } from '../index';
+import { appName } from '../variables';
 
 const configRootKeys = ['shared', appName];
 
