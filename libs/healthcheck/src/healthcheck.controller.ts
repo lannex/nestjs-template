@@ -1,10 +1,10 @@
 import { Controller, Get } from '@nestjs/common';
 import { QueryBus } from '@nestjs/cqrs';
 
-import { GetHealthQuery } from './get-health.query';
+import { GetHealthQuery } from './queries/get-health/get-health.query';
 
 @Controller('healthcheck')
-export class GetHealthcheckController {
+export class HealthcheckController {
   constructor(private readonly queryBus: QueryBus) {}
 
   @Get()
