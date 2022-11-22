@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 
-import { RedisOutAdapter } from './redis.out.adapter';
-import { CacheOutPort } from './cache.out.port';
+import { RedisOutAdapter } from './infrastructure/redis.out.adapter';
+import { CacheOutPort } from './application/cache.out.port';
 
 export const cacheProvider = {
   provide: CacheOutPort,
