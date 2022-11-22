@@ -21,7 +21,7 @@
     "@automapper/core": "^8.7.7",
     "@automapper/nestjs": "^8.7.7",
     "@fastify/cookie": "^8.3.0",
-    "@fastify/static": "^6.5.0",
+    "@fastify/static": "^6.5.1",
     "@liaoliaots/nestjs-redis": "^9.0.4",
     "@nestjs/common": "^9.2.0",
     "@nestjs/config": "^2.2.0",
