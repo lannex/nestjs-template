@@ -3,12 +3,12 @@
   "version": "0.0.1",
   "license": "MIT",
   "scripts": {
-    "start:www": "APP_NAME=www NODE_ENV=production node ./dist/apps/www/main.js",
-    "serve:www:prod": "APP_NAME=www nx run www:serve --configuration production",
-    "serve:www:dev": "APP_NAME=www nx run www:serve",
-    "serve:www:local": "APP_NAME=www NODE_ENV=local nx run www:serve",
-    "build:www:prod": "APP_NAME=www nx run www:build --configuration production",
-    "build:www:dev": "APP_NAME=www nx run www:build",
+    "start:www": "sh tools/npm-scripts/www.sh start",
+    "serve:www:prod": "sh tools/npm-scripts/www.sh serve_prod",
+    "serve:www:dev": "sh tools/npm-scripts/www.sh serve_dev",
+    "serve:www:local": "sh tools/npm-scripts/www.sh serve_local",
+    "build:www:prod": "sh tools/npm-scripts/www.sh build_prod",
+    "build:www:dev": "sh tools/npm-scripts/www.sh build_dev",
     "install:libs": "nx run shared-configs:install",
     "update:libs": "nx run shared-configs:update",
     "reset": "nx reset"
