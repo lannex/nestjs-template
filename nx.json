@@ -52,6 +52,5 @@
       "!{projectRoot}/.eslintrc.json"
     ],
     "sharedGlobals": []
-  },
-  "defaultProject": "www"
+  }
 }

@@ -3,11 +3,13 @@
   "version": "0.0.1",
   "license": "MIT",
   "scripts": {
-    "start": "nx serve",
-    "build": "nx build",
-    "test": "nx test",
+    "start:www": "NODE_ENV=production node ./dist/apps/www/main.js",
+    "serve:www": "nx run www:serve --configuration production",
+    "dev:www": "nx run www:serve",
+    "build:www": "nx run www:build --configuration production",
     "install:libs": "nx run shared-configs:install",
-    "update:libs": "nx run shared-configs:update"
+    "update:libs": "nx run shared-configs:update",
+    "reset": "nx reset"
   },
   "private": true,
   "engines": {
