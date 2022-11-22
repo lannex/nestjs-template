@@ -9,8 +9,6 @@
     "serve:www:local": "sh tools/npm-scripts/www.sh serve_local",
     "build:www:prod": "sh tools/npm-scripts/www.sh build_prod",
     "build:www:dev": "sh tools/npm-scripts/www.sh build_dev",
-    "install:libs": "nx run shared-configs:install",
-    "update:libs": "nx run shared-configs:update",
     "reset": "nx reset"
   },
   "private": true,
@@ -18,6 +16,8 @@
     "node": ">=18.10.0"
   },
   "dependencies": {
+    "@automapper/classes": "^8.7.7",
+    "@automapper/nestjs": "^8.7.7",
     "@fastify/cookie": "^8.3.0",
     "@fastify/static": "^6.5.0",
     "@nestjs/common": "^9.2.0",
@@ -27,6 +27,7 @@
     "@nestjs/jwt": "^9.0.0",
     "@nestjs/passport": "^9.0.0",
     "@nestjs/platform-fastify": "^9.2.0",
+    "@nestjs/swagger": "^6.1.3",
     "@nestjs/typeorm": "^9.0.1",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.13.2",
