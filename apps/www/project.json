@@ -22,8 +22,8 @@
           "inspect": false,
           "fileReplacements": [
             {
-              "replace": "apps/www/src/environments/environment.ts",
-              "with": "apps/www/src/environments/environment.prod.ts"
+              "replace": "apps/www/src/configs/webpack/environment.ts",
+              "with": "apps/www/src/configs/webpack/environment.prod.ts"
             }
           ]
         }
