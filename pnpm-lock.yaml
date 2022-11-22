@@ -36,6 +36,7 @@ specifiers:
   class-transformer: ^0.5.1
   class-validator: ^0.13.2
   config: ^3.3.8
+  envalid: ^7.3.1
   eslint: ~8.28.0
   eslint-config-airbnb-base: ^15.0.0
   eslint-config-prettier: 8.5.0
@@ -77,6 +78,7 @@ dependencies:
   class-transformer: 0.5.1
   class-validator: 0.13.2
   config: 3.3.8
+  envalid: 7.3.1
   joi: 17.7.0
   mysql2: 2.3.3
   nest-winston: 1.8.0_a2lm2wzuatarjy2ihkhx2k5qdi
@@ -3804,6 +3806,13 @@ packages:
     resolution: {integrity: sha512-oYp7156SP8LkeGD0GF85ad1X9Ai79WtRsZ2gxJqtBuzH+98YUV6jkHEKlZkMbcrjJjIVJNIDP/3WL9wQkoPbWA==}
     engines: {node: '>=0.12'}
     dev: true
+
+  /envalid/7.3.1:
+    resolution: {integrity: sha512-KL1YRwn8WcoF/Ty7t+yLLtZol01xr9ZJMTjzoGRM8NaSU+nQQjSWOQKKJhJP2P57bpdakJ9jbxqQX4fGTOicZg==}
+    engines: {node: '>=8.12'}
+    dependencies:
+      tslib: 2.3.1
+    dev: false
 
   /errno/0.1.8:
     resolution: {integrity: sha512-dJ6oBr5SQ1VSd9qkk7ByRgb/1SH4JZjCHSW/mr63/QcXO9zLVxvJ6Oy13nio03rxpSnVDDjFor75SjVeZWPW/A==}
@@ -8747,6 +8756,10 @@ packages:
   /tslib/1.14.1:
     resolution: {integrity: sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==}
     dev: true
+
+  /tslib/2.3.1:
+    resolution: {integrity: sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw==}
+    dev: false
 
   /tslib/2.4.1:
     resolution: {integrity: sha512-tGyy4dAjRIEwI7BzsB0lynWgOpfqjUdq91XXAlIWD2OwKBH7oCl/GZG/HT4BOHrTlPMOASlMQ7veyTqpmRcrNA==}
