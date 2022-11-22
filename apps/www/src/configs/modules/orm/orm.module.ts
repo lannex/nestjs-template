@@ -1,11 +1,12 @@
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigService } from '@nestjs/config';
 
-import { ConfigModule } from './config.module';
-import { appName, isProduction } from '../values';
+import { ConfigModule } from '../config/config.module';
+import { appName, isProduction } from '../../values';
 
 export const OrmModule = TypeOrmModule.forRootAsync({
   imports: [ConfigModule],
+  inject: [ConfigService],
   useFactory: (configService: ConfigService) => {
     const { host, port, username, password, database } = configService.get(
       `${appName}.db`,
@@ -22,5 +23,4 @@ export const OrmModule = TypeOrmModule.forRootAsync({
       synchronize: !isProduction,
     };
   },
-  inject: [ConfigService],
 });

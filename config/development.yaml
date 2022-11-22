@@ -1,3 +1,9 @@
+shared:
+  redis:
+    host: redis
+    port: 6379
+    password: q/w.e,rm
+
 # Apps
 www:
   host:

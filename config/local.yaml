@@ -1,3 +1,9 @@
+shared:
+  redis:
+    host: localhost
+    port: 6902
+    password: q/w.e,rm
+
 # Apps
 www:
   host:
