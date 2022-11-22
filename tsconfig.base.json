@@ -15,6 +15,7 @@
     "noFallthroughCasesInSwitch": true,
     "paths": {
       "@nestjs-template/healthcheck": ["libs/healthcheck/src/index.ts"],
+      "@nestjs-template/cache": ["libs/cache/src/index.ts"],
       "@nestjs-template/shared-configs": ["libs/shared-configs/src/index.ts"]
     },
     "removeComments": true,

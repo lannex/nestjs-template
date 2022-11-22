@@ -1,7 +1,7 @@
 shared:
   redis:
-    host: redis
-    port: 6379
+    host: localhost
+    port: 6902
     password: q/w.e,rm
 
 # Apps
