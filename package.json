@@ -3,12 +3,12 @@
   "version": "0.0.1",
   "license": "MIT",
   "scripts": {
-    "start:www": "sh tools/npm-scripts/www.sh start www",
-    "serve:www:prod": "sh tools/npm-scripts/www.sh serve_prod www",
-    "serve:www:dev": "sh tools/npm-scripts/www.sh serve_dev www",
-    "serve:www:local": "sh tools/npm-scripts/www.sh serve_local www",
-    "build:www:prod": "sh tools/npm-scripts/www.sh build_prod www",
-    "build:www:dev": "sh tools/npm-scripts/www.sh build_dev www",
+    "start:www": "sh tools/npm-scripts/nx.sh start www",
+    "serve:www:prod": "sh tools/npm-scripts/nx.sh serve_prod www",
+    "serve:www:dev": "sh tools/npm-scripts/nx.sh serve_dev www",
+    "serve:www:local": "sh tools/npm-scripts/nx.sh serve_local www",
+    "build:www:prod": "sh tools/npm-scripts/nx.sh build_prod www",
+    "build:www:dev": "sh tools/npm-scripts/nx.sh build_dev www",
     "reset": "nx reset"
   },
   "private": true,
