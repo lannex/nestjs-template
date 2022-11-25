@@ -1,17 +1,17 @@
 shared:
   redis:
-    host: localhost
-    port: 6902
-    password: q/w.e,rm
+    host:
+    port:
+    password:
 
 # Apps
-www:
+membership:
   host:
   port:
   db:
-    type: mysql
-    host: localhost
-    port: 3306
-    username: root
-    password: root
-    database: test
+    type:
+    host:
+    port:
+    username:
+    password:
+    database:

@@ -13,6 +13,7 @@ RUN pnpm build:$APP:prod
 
 FROM node:19.1-alpine AS app
 ARG APP
+ARG ENV
 
 RUN mkdir -p /app
 WORKDIR /app
@@ -24,5 +25,5 @@ COPY --from=builder /app/dist ./dist
 EXPOSE 3000
 
 ENV APP_NAME $APP
-ENV NODE_ENV production
+ENV NODE_ENV $ENV
 CMD node ./dist/apps/$APP_NAME/main.js
