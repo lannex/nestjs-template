@@ -1,7 +1,7 @@
 import { Controller, Get } from '@nestjs/common';
 import { QueryBus } from '@nestjs/cqrs';
 
-import { GetHealthQuery } from './application/queries/get-health/get-health.query';
+import { GetHealthQuery } from './app/queries/get-health/get-health.query';
 
 @Controller('healthcheck')
 export class HealthcheckController {
