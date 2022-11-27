@@ -47,3 +47,7 @@ Thumbs.db
 
 # asdf
 .tool-versions
+
+# Config
+config/production.yaml
+config/development.yaml
