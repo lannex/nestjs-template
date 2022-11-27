@@ -10,7 +10,7 @@ services:
     ports:
       - '3306:3306'
     networks:
-      - app
+      - apps
 
   redis:
     image: docker.io/bitnami/redis:7.0.5
@@ -23,7 +23,7 @@ services:
     volumes:
       - redis-data:/bitnami/redis/data
     networks:
-      - app
+      - apps
 
   redis-ui:
     image: patrikx3/p3x-redis-ui:latest
@@ -33,7 +33,7 @@ services:
     volumes:
       - redis-ui:/settings
     networks:
-      - app
+      - apps
 
 volumes:
   db-data: null
@@ -42,6 +42,6 @@ volumes:
   redis-ui: null
 
 networks:
-  app:
-    name: app
+  apps:
+    name: apps
     driver: bridge
