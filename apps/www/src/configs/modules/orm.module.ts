@@ -2,24 +2,29 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigService } from '@nestjs/config';
 
 import { ConfigModule } from './config.module';
-import { appName, isProduction } from '../values';
+import {
+  appName,
+  dbHost,
+  dbPassword,
+  dbPort,
+  dbUsername,
+  isProduction,
+} from '../values';
 
 export const OrmModule = TypeOrmModule.forRootAsync({
   imports: [ConfigModule],
   inject: [ConfigService],
   useFactory: (configService: ConfigService) => {
-    const { host, port, username, password, database } = configService.get(
-      `${appName}.db`,
-    );
+    const { database } = configService.get(`${appName}.db`);
 
     return {
       type: 'mysql',
-      host,
-      port: Number(port),
-      username,
-      password,
+      host: dbHost,
+      port: Number(dbPort),
+      username: dbUsername,
+      password: dbPassword,
       database,
-      entities: [`${__dirname}/**/*.entity.ts`],
+      entities: [],
       synchronize: !isProduction,
     };
   },
