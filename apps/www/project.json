@@ -4,16 +4,20 @@
   "sourceRoot": "apps/www/src",
   "projectType": "application",
   "targets": {
-    "build": {
+    "webpack": {
       "executor": "@nrwl/webpack:webpack",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "target": "node",
         "compiler": "swc",
         "outputPath": "dist/apps/www",
         "main": "apps/www/src/main.ts",
         "tsConfig": "apps/www/tsconfig.app.json",
-        "assets": ["apps/www/src/assets"]
+        "assets": [
+          "apps/www/src/assets"
+        ]
       },
       "configurations": {
         "production": {
@@ -29,30 +33,61 @@
         }
       }
     },
-    "serve": {
+    "watch": {
       "executor": "@nrwl/js:node",
       "options": {
-        "buildTarget": "www:build"
+        "buildTarget": "www:webpack"
       },
       "configurations": {
         "production": {
-          "buildTarget": "www:build:production"
+          "buildTarget": "www:webpack:production"
         }
       }
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
+      "outputs": [
+        "{options.outputFile}"
+      ],
       "options": {
-        "lintFilePatterns": ["apps/www/**/*.ts"]
+        "lintFilePatterns": [
+          "apps/www/**/*.ts"
+        ]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
       "options": {
         "jestConfig": "apps/www/jest.config.ts",
         "passWithNoTests": true
+      }
+    },
+    "serve": {
+      "executor": "nx:run-commands",
+      "configurations": {
+        "local": {
+          "command": "APP_NAME=www NODE_ENV=local nx run www:watch"
+        },
+        "dev": {
+          "command": "APP_NAME=www nx run www:watch"
+        },
+        "prod": {
+          "command": "APP_NAME=www nx run www:watch --configuration production"
+        }
+      }
+    },
+    "build": {
+      "executor": "nx:run-commands",
+      "configurations": {
+        "dev": {
+          "command": "APP_NAME=www nx run www:webpack"
+        },
+        "prod": {
+          "command": "APP_NAME=www nx run www:webpack --configuration production"
+        }
       }
     }
   },

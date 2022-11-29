@@ -3,12 +3,11 @@
   "version": "0.0.1",
   "license": "MIT",
   "scripts": {
-    "start:www": "sh tools/npm-scripts/nx.sh start www",
-    "serve:www:prod": "sh tools/npm-scripts/nx.sh serve_prod www",
-    "serve:www:dev": "sh tools/npm-scripts/nx.sh serve_dev www",
-    "serve:www:local": "sh tools/npm-scripts/nx.sh serve_local www",
-    "build:www:prod": "sh tools/npm-scripts/nx.sh build_prod www",
-    "build:www:dev": "sh tools/npm-scripts/nx.sh build_dev www",
+    "www:serve:prod": "nx run www:serve:prod",
+    "www:serve:dev": "nx run www:serve:dev",
+    "www:serve:local": "nx run www:serve:local",
+    "www:build:prod": "nx run www:build:prod",
+    "www:build:dev": "nx run www:build:dev",
     "reset": "nx reset"
   },
   "private": true,
