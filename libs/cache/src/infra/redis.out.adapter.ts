@@ -2,7 +2,7 @@ import Redis from 'ioredis';
 import { Injectable } from '@nestjs/common';
 import { InjectRedis } from '@liaoliaots/nestjs-redis';
 
-import { CacheOutPort } from '../app/port/cache.out.port';
+import { CacheOutPort } from '../app/ports/cache.out.port';
 
 @Injectable()
 export class RedisOutAdapter implements CacheOutPort {
