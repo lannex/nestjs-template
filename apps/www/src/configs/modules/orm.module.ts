@@ -26,6 +26,7 @@ export const OrmModule = TypeOrmModule.forRootAsync({
       database,
       entities: [],
       synchronize: !isProduction,
+      logging: !isProduction,
     };
   },
 });
