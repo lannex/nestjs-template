@@ -6,7 +6,7 @@ services:
     platform: ${DOCKER_PLATFORM}
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: test
+#      MYSQL_DATABASE: test
     ports:
       - '3306:3306'
     networks:
