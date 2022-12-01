@@ -40,7 +40,6 @@ specifiers:
   '@typescript-eslint/parser': ^5.43.0
   class-transformer: ^0.5.1
   class-validator: ^0.13.2
-  config: ^3.3.8
   envalid: ^7.3.1
   eslint: ~8.28.0
   eslint-config-airbnb-base: ^15.0.0
@@ -88,7 +87,6 @@ dependencies:
   '@nestjs/typeorm': 9.0.1_2ekyp7igf6cbpgvvmiypy4gzpu
   class-transformer: 0.5.1
   class-validator: 0.13.2
-  config: 3.3.8
   envalid: 7.3.1
   ioredis: 5.2.4
   joi: 17.7.0
@@ -3332,13 +3330,6 @@ packages:
   /concat-map/0.0.1:
     resolution: {integrity: sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==}
 
-  /config/3.3.8:
-    resolution: {integrity: sha512-rFzF6VESOdp7wAXFlB9IOZI4ouL05g3A03v2eRcTHj2JBQaTNJ40zhAUl5wRbWHqLZ+uqp/7OE0BWWtAVgrong==}
-    engines: {node: '>= 10.0.0'}
-    dependencies:
-      json5: 2.2.1
-    dev: false
-
   /confusing-browser-globals/1.0.11:
     resolution: {integrity: sha512-JsPKdmh8ZkmnHxDk55FZ1TqVLvEQTvoByJZRN9jzI0UjxK/QgAmsphz7PGtqgPieQZ/CQcHWXCR7ATDNhGe+YA==}
     dev: true
@@ -6320,6 +6311,7 @@ packages:
     resolution: {integrity: sha512-1hqLFMSrGHRHxav9q9gNjJ5EXznIxGVO09xQRrwplcS8qs28pZ8s8hupZAmqDwZUmVZ2Qb2jnyPOWcDH8m8dlA==}
     engines: {node: '>=6'}
     hasBin: true
+    dev: true
 
   /jsonc-parser/3.1.0:
     resolution: {integrity: sha512-DRf0QjnNeCUds3xTjKlQQ3DpJD51GvDjJfnxUVWg6PZTo2otSm+slzNAxU/35hF8/oJIKoG9slq30JYOsF2azg==}

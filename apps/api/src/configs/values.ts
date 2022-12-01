@@ -1,15 +1,18 @@
-import config from 'config';
 import { cleanEnv, str } from 'envalid';
-
-const getConfig = (val: string) => config.get<string>(val);
 
 const env = cleanEnv(process.env, {
   APP_NAME: str(),
   NODE_ENV: str({ choices: ['local', 'development', 'production'] }),
-  DB_HOST: str({ default: '' }),
-  DB_PORT: str({ default: '' }),
-  DB_USERNAME: str({ default: '' }),
-  DB_PASSWORD: str({ default: '' }),
+  HOST: str({ default: '' }),
+  PORT: str({ default: '' }),
+  DB_HOST: str(),
+  DB_PORT: str(),
+  DB_USERNAME: str(),
+  DB_PASSWORD: str(),
+  DB_DATABASE: str({ default: '' }),
+  REDIS_HOST: str(),
+  REDIS_PORT: str(),
+  REDIS_PASSWORD: str(),
 });
 
 export const isProduction = env.NODE_ENV === 'production';
@@ -17,13 +20,20 @@ export const isProduction = env.NODE_ENV === 'production';
 export const appName = env.APP_NAME;
 
 // App
-export const host = getConfig(`${appName}.host`);
-export const port = getConfig(`${appName}.port`);
+export const { HOST: host, PORT: port } = env;
 
 // DB
-export const dbHost = env.DB_HOST || getConfig(`${appName}.db.host`);
-export const dbPort = env.DB_PORT || getConfig(`${appName}.db.port`);
-export const dbUsername =
-  env.DB_USERNAME || getConfig(`${appName}.db.username`);
-export const dbPassword =
-  env.DB_PASSWORD || getConfig(`${appName}.db.password`);
+export const {
+  DB_HOST: dbHost,
+  DB_PORT: dbPort,
+  DB_USERNAME: dbUsername,
+  DB_PASSWORD: dbPassword,
+  DB_DATABASE: dbDatabase,
+} = env;
+
+// Redis
+export const {
+  REDIS_HOST: redisHost,
+  REDIS_PORT: redisPort,
+  REDIS_PASSWORD: redisPassword,
+} = env;

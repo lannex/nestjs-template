@@ -3,7 +3,7 @@ import { ConfigService } from '@nestjs/config';
 
 import { ConfigModule } from './config.module';
 import {
-  appName,
+  dbDatabase,
   dbHost,
   dbPassword,
   dbPort,
@@ -15,15 +15,13 @@ export const OrmModule = TypeOrmModule.forRootAsync({
   imports: [ConfigModule],
   inject: [ConfigService],
   useFactory: (configService: ConfigService) => {
-    const { database } = configService.get(`${appName}.db`);
-
     return {
       type: 'mysql',
       host: dbHost,
       port: Number(dbPort),
       username: dbUsername,
       password: dbPassword,
-      database,
+      database: dbDatabase,
       entities: [],
       synchronize: !isProduction,
       logging: ['error'],
