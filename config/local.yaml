@@ -5,7 +5,7 @@ shared:
     password: q/w.e,rm
 
 # Apps
-www:
+api:
   host:
   port:
   db:

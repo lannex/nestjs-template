@@ -1,7 +1,7 @@
 {
-  "name": "www",
+  "name": "api",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/www/src",
+  "sourceRoot": "apps/api/src",
   "projectType": "application",
   "targets": {
     "webpack": {
@@ -12,11 +12,11 @@
       "options": {
         "target": "node",
         "compiler": "swc",
-        "outputPath": "dist/apps/www",
-        "main": "apps/www/src/main.ts",
-        "tsConfig": "apps/www/tsconfig.app.json",
+        "outputPath": "dist/apps/api",
+        "main": "apps/api/src/main.ts",
+        "tsConfig": "apps/api/tsconfig.app.json",
         "assets": [
-          "apps/www/src/assets"
+          "apps/api/src/assets"
         ]
       },
       "configurations": {
@@ -26,8 +26,8 @@
           "inspect": false,
           "fileReplacements": [
             {
-              "replace": "apps/www/webpack/environment.ts",
-              "with": "apps/www/webpack/environment.prod.ts"
+              "replace": "apps/api/webpack/environment.ts",
+              "with": "apps/api/webpack/environment.prod.ts"
             }
           ]
         }
@@ -36,11 +36,11 @@
     "watch": {
       "executor": "@nrwl/js:node",
       "options": {
-        "buildTarget": "www:webpack"
+        "buildTarget": "api:webpack"
       },
       "configurations": {
         "production": {
-          "buildTarget": "www:webpack:production"
+          "buildTarget": "api:webpack:production"
         }
       }
     },
@@ -51,7 +51,7 @@
       ],
       "options": {
         "lintFilePatterns": [
-          "apps/www/**/*.ts"
+          "apps/api/**/*.ts"
         ]
       }
     },
@@ -61,7 +61,7 @@
         "{workspaceRoot}/coverage/{projectRoot}"
       ],
       "options": {
-        "jestConfig": "apps/www/jest.config.ts",
+        "jestConfig": "apps/api/jest.config.ts",
         "passWithNoTests": true
       }
     },
@@ -69,13 +69,13 @@
       "executor": "nx:run-commands",
       "configurations": {
         "local": {
-          "command": "APP_NAME=www NODE_ENV=local nx run www:watch"
+          "command": "APP_NAME=api NODE_ENV=local nx run api:watch"
         },
         "dev": {
-          "command": "APP_NAME=www nx run www:watch"
+          "command": "APP_NAME=api nx run api:watch"
         },
         "prod": {
-          "command": "APP_NAME=www nx run www:watch --configuration production"
+          "command": "APP_NAME=api nx run api:watch --configuration production"
         }
       }
     },
@@ -83,10 +83,10 @@
       "executor": "nx:run-commands",
       "configurations": {
         "dev": {
-          "command": "APP_NAME=www nx run www:webpack"
+          "command": "APP_NAME=api nx run api:webpack"
         },
         "prod": {
-          "command": "APP_NAME=www nx run www:webpack --configuration production"
+          "command": "APP_NAME=api nx run api:webpack --configuration production"
         }
       }
     }
