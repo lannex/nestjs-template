@@ -18,7 +18,6 @@ ARG ENV
 RUN mkdir -p /app
 WORKDIR /app
 
-COPY --from=builder /app/config ./config
 COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/dist ./dist
 
