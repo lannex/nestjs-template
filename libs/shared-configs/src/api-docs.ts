@@ -6,13 +6,19 @@ interface BuildOptions {
   description: string;
   path: string;
   version?: string;
+  server?: string;
 }
 
 const createDocs = (
   app: INestApplication,
-  { title, description, version = '0.0.1' }: Omit<BuildOptions, 'path'>,
-) =>
-  SwaggerModule.createDocument(
+  {
+    title,
+    description,
+    version = '0.0.1',
+    server = 'http://localhost:3000',
+  }: Omit<BuildOptions, 'path'>,
+) => {
+  return SwaggerModule.createDocument(
     app,
     new DocumentBuilder()
       .setTitle(title)
@@ -20,8 +26,10 @@ const createDocs = (
       .addBearerAuth()
       .addCookieAuth('refresh')
       .setVersion(version)
+      .addServer(server)
       .build(),
   );
+};
 
 export const buildSwagger = (
   app: INestApplication,
