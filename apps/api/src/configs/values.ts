@@ -15,6 +15,7 @@ const env = cleanEnv(process.env, {
   REDIS_PASSWORD: str(),
 });
 
+export const isLocal = env.NODE_ENV === 'local';
 export const isProduction = env.NODE_ENV === 'production';
 
 export const appName = env.APP_NAME;

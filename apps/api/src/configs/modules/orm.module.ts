@@ -8,6 +8,7 @@ import {
   dbPassword,
   dbPort,
   dbUsername,
+  isLocal,
   isProduction,
 } from '../values';
 
@@ -23,8 +24,9 @@ export const OrmModule = TypeOrmModule.forRootAsync({
       password: dbPassword,
       database: dbDatabase,
       entities: [],
-      synchronize: !isProduction,
-      logging: ['error'],
+      migrationsRun: isLocal,
+      synchronize: isLocal,
+      logging: isProduction ? ['error'] : 'all',
     };
   },
 });
