@@ -5,11 +5,12 @@ interface BuildOptions {
   title: string;
   description: string;
   path: string;
+  version?: string;
 }
 
 const createDocs = (
   app: INestApplication,
-  { title, description }: Omit<BuildOptions, 'path'>,
+  { title, description, version = '0.0.1' }: Omit<BuildOptions, 'path'>,
 ) =>
   SwaggerModule.createDocument(
     app,
@@ -18,14 +19,19 @@ const createDocs = (
       .setDescription(description)
       .addBearerAuth()
       .addCookieAuth('refresh')
-      .setVersion('0.0.1')
+      .setVersion(version)
       .build(),
   );
 
 export const buildSwagger = (
   app: INestApplication,
-  { title, path, description }: BuildOptions,
+  { title, path, description, ...rest }: BuildOptions,
 ) =>
-  SwaggerModule.setup(path, app, createDocs(app, { title, description }), {
-    swaggerOptions: { defaultModelsExpandDepth: -1 },
-  });
+  SwaggerModule.setup(
+    path,
+    app,
+    createDocs(app, { title, description, ...rest }),
+    {
+      swaggerOptions: { defaultModelsExpandDepth: -1 },
+    },
+  );
