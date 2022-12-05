@@ -6,7 +6,8 @@ interface BuildOptions {
   description: string;
   path: string;
   version?: string;
-  server?: string;
+  localhost?: string;
+  host?: string;
 }
 
 const createDocs = (
@@ -15,7 +16,8 @@ const createDocs = (
     title,
     description,
     version = '0.0.1',
-    server = 'http://localhost:3000',
+    localhost = 'http://localhost:3000',
+    host = '',
   }: Omit<BuildOptions, 'path'>,
 ) => {
   return SwaggerModule.createDocument(
@@ -26,7 +28,8 @@ const createDocs = (
       .addBearerAuth()
       .addCookieAuth('refresh')
       .setVersion(version)
-      .addServer(server)
+      .addServer(localhost)
+      .addServer(host)
       .build(),
   );
 };
