@@ -1,20 +1,17 @@
-import {
-  ClassSerializerInterceptor,
-  Provider,
-  ValidationPipe,
-} from '@nestjs/common';
+import { ClassSerializerInterceptor, Provider } from '@nestjs/common';
 import { APP_FILTER, APP_INTERCEPTOR, APP_PIPE } from '@nestjs/core';
 
-import { AllExceptionsFilter } from './utils/filters';
+import {
+  AllExceptionsFilter,
+  autoLoggerInterceptor,
+  sentryInterceptor,
+  validationPipe,
+} from '@nestjs-template/shared-configs';
 
 export const providers: Provider[] = [
   {
     provide: APP_PIPE,
-    useValue: new ValidationPipe({
-      whitelist: true,
-      forbidNonWhitelisted: true,
-      transform: true,
-    }),
+    useValue: validationPipe,
   },
   {
     provide: APP_INTERCEPTOR,
@@ -23,5 +20,13 @@ export const providers: Provider[] = [
   {
     provide: APP_FILTER,
     useClass: AllExceptionsFilter,
+  },
+  {
+    provide: APP_INTERCEPTOR,
+    useFactory: sentryInterceptor,
+  },
+  {
+    provide: APP_INTERCEPTOR,
+    useFactory: autoLoggerInterceptor,
   },
 ];
