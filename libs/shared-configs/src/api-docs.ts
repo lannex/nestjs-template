@@ -1,40 +1,45 @@
 import { INestApplication } from '@nestjs/common';
-import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
+import { DocumentBuilder, OpenAPIObject, SwaggerModule } from '@nestjs/swagger';
 
 interface BuildOptions {
   title: string;
   description: string;
   path: string;
   version?: string;
-  localhost?: string;
-  host?: string;
+  hosts: string[];
 }
 
-const createDocs = (
+interface CreateDocs {
+  (
+    app: INestApplication,
+    { title, description, version }: Omit<BuildOptions, 'path'>,
+  ): OpenAPIObject;
+}
+
+const createDocs: CreateDocs = (
   app: INestApplication,
-  {
-    title,
-    description,
-    version = '0.0.1',
-    localhost = 'http://localhost:3000',
-    host = '',
-  }: Omit<BuildOptions, 'path'>,
+  { title, description, hosts, version = '0.0.1' }: Omit<BuildOptions, 'path'>,
 ) => {
-  return SwaggerModule.createDocument(
-    app,
-    new DocumentBuilder()
-      .setTitle(title)
-      .setDescription(description)
-      .addBearerAuth()
-      .addCookieAuth('refresh')
-      .setVersion(version)
-      .addServer(localhost)
-      .addServer(host)
-      .build(),
-  );
+  const builder = new DocumentBuilder()
+    .setTitle(title)
+    .setDescription(description)
+    .addBearerAuth()
+    .addCookieAuth('refresh')
+    .setVersion(version);
+
+  hosts.forEach((host) => builder.addServer(host));
+
+  return SwaggerModule.createDocument(app, builder.build());
 };
 
-export const buildSwagger = (
+interface BuildSwagger {
+  (
+    app: INestApplication,
+    { title, path, description, ...rest }: BuildOptions,
+  ): void;
+}
+
+export const buildSwagger: BuildSwagger = (
   app: INestApplication,
   { title, path, description, ...rest }: BuildOptions,
 ) =>

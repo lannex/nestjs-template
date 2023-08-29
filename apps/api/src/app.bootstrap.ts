@@ -15,7 +15,9 @@ import { isProduction } from './configs/values';
 export const bootstrap = async (host: string, port: string) => {
   const app = await NestFactory.create<NestFastifyApplication>(
     AppModule,
-    new FastifyAdapter(),
+    new FastifyAdapter({
+      // bodyLimit: 30 * 1024 * 1024,
+    }),
     { logger: createLogger('api') },
   );
 
@@ -34,8 +36,9 @@ export const bootstrap = async (host: string, port: string) => {
   if (!isProduction) {
     buildSwagger(app, {
       title: 'API 문서',
-      description: '',
+      description: 'API 문서 설명입니다.',
       path: '/docs',
+      hosts: ['http://localhost:3000'],
     });
   }
 

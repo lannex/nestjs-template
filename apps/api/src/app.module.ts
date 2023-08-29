@@ -1,4 +1,4 @@
-import { Module } from '@nestjs/common';
+import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
 
 import { HealthcheckModule } from '@nestjs-template/healthcheck';
 
@@ -9,4 +9,8 @@ import { configsModule } from './configs/modules';
   imports: [...configsModule, HealthcheckModule],
   providers,
 })
-export class AppModule {}
+export class AppModule implements NestModule {
+  configure(consumer: MiddlewareConsumer): void {
+    // NOTE: 글로벌 미들웨어 클래스는 bootstrap이 아닌 여기서만 등록 가능
+  }
+}
