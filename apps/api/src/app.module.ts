@@ -3,10 +3,13 @@ import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
 import { HealthcheckModule } from '@nestjs-template/healthcheck';
 
 import { providers } from './app.providers';
-import { configsModule } from './configs/modules';
+import { configModules } from './configs/modules';
+
+const libModules = [HealthcheckModule];
+const modules = [];
 
 @Module({
-  imports: [...configsModule, HealthcheckModule],
+  imports: [...configModules, ...libModules],
   providers,
 })
 export class AppModule implements NestModule {
